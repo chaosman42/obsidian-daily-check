@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>com.daily-checklist</string>
+
+    <key>ProgramArguments</key>
+    <array>
+        <string>/bin/bash</string>
+        <!-- CHANGE THIS to your script path -->
+        <string>/Users/YOUR_USERNAME/.local/bin/daily-remind.sh</string>
+    </array>
+
+    <!-- Trigger twice daily: 8:00 AM and 9:00 PM -->
+    <key>StartCalendarInterval</key>
+    <array>
+        <dict>
+            <key>Hour</key>
+            <integer>8</integer>
+            <key>Minute</key>
+            <integer>0</integer>
+        </dict>
+        <dict>
+            <key>Hour</key>
+            <integer>21</integer>
+            <key>Minute</key>
+            <integer>0</integer>
+        </dict>
+    </array>
+
+    <key>StandardOutPath</key>
+    <string>/tmp/daily-checklist.log</string>
+    <key>StandardErrorPath</key>
+    <string>/tmp/daily-checklist-error.log</string>
+</dict>
+</plist>
